@@ -1,8 +1,13 @@
-import React, {Component, useState} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import './App.css';
 
 function App() {
   const [count, updateCount] = useState(0);
+
+  useEffect(() => {
+    document.title = `Clicked me ${count} times`;
+  }) 
+
 
   const increament = () => {
     updateCount(count + 1);
@@ -30,6 +35,14 @@ function App() {
 //     });
 //   };
   
+//   componentDidMount() {
+//     document.title = `Clicked me ${this.state.count} times`;
+//   }
+
+//   componentDidUpdate() {
+//     document.title = `Clicked me ${this.state.count} times`;
+//   }
+
 //   render() {
 //     return (
 //       <div className='clickerbox'>
